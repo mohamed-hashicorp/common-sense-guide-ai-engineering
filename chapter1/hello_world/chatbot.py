@@ -7,7 +7,7 @@ load_dotenv()
 
 llm = OpenAI()
 
-model = os.getenv("MODEL", "gpt-4.1-mini")
+model = os.getenv("MODEL", "gpt-4.1")
 
 response = llm.responses.create(
     model=model,

@@ -1,7 +1,7 @@
 [project]
 name = "hello-world"
 version = "0.1.0"
-description = "Chapter 1: Hello, World! — First LLM API call"
+description = "Chapter 1: HeLLMo, World! — First LLM API call"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
