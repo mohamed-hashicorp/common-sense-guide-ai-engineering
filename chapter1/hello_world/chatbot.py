@@ -1,14 +1,18 @@
+import os
+
 from dotenv import load_dotenv
-from openai import OpenAI 
+from openai import OpenAI
 
 load_dotenv()
 
 llm = OpenAI()
 
+model = os.getenv("MODEL", "gpt-4.1-mini")
+
 response = llm.responses.create(
-    model="gpt-4.1-mini",
+    model=model,
     temperature=0,
-    input="Who was the first person landed on the moon"
+    input="Who was the first person to land on the moon",
 )
 
 print(response.output_text)

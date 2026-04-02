@@ -12,40 +12,40 @@ $ uv init hello_world
 ```
 $ cd hello_world
 ```
-- run the commands
+- Run the commands
 ```
 $ uv add python-dotenv
 $ uv add openai
 ```
-- create a `.env` file and set the following
+- Create a `.env` file and set the following
 ```
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxx
 ```
-- run the code
+- Run the code
 ```
-uv run chatbot.py
+$ uv run chatbot.py
 ```
-- output will be
+- Output will be
 ```
-# uv run chatbot.py
 The first person to land on the Moon was **Neil Armstrong**. He set foot on the lunar surface on **July 20, 1969**, during the **Apollo 11** mission. As he stepped onto the Moon, he famously said:
 
 > "That's one small step for [a] man, one giant leap for mankind."
 
 Buzz Aldrin followed him shortly after, becoming the second person to walk on the Moon.
 ```
-- update the model in the chatbot.py
-```
-model="gpt-4.1-mini"
-```
-- run the chatbot.py again
+
+## Comparing models
+
+The model is configurable via the `MODEL` environment variable. Try different models to see how their outputs differ:
+
+- Run with `gpt-4.1-mini` (default)
 ```
 $ uv run chatbot.py
 The first person to land on the Moon was Neil Armstrong. He set foot on the lunar surface on July 20, 1969, during NASA's Apollo 11 mission. His famous words upon stepping onto the Moon were, "That's one small step for [a] man, one giant leap for mankind."
 ```
-- update the model in the chatbot.py
+- Run with `gpt-5-mini`
 ```
-model="gpt-5-mini"
+$ MODEL=gpt-5-mini uv run chatbot.py
 ```
-- run the chatbot.py again
-```
+
+Notice how different models produce different responses for the same prompt — varying in length, formatting, and level of detail. Model selection is one of the first practical decisions you'll make as an AI engineer.
