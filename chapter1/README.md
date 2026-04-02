@@ -1,4 +1,4 @@
-# Chapter 1: HeLLMo, World!
+# Chapter 1: Hello, World!
 
 - Install uv
 ```

@@ -7,7 +7,7 @@ Each chapter is a self-contained project you can run independently.
 
 | # | Title | Topics |
 |---|---|---|
-| 1 | [HeLLMo, World!](chapter1/) | First LLM API call, uv, OpenAI Responses API, model comparison |
+| 1 | [Hello, World!](chapter1/) | First LLM API call, uv, OpenAI Responses API, model comparison |
 
 ## Prerequisites
 
