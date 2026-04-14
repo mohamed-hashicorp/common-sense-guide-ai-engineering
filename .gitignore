@@ -1,1 +1,4 @@
 chapter1/hello_world/.env
+chapter5/getting_user_input/.env
+chapter5/augmenting_prompt/.env
+chapter5/**/.env
