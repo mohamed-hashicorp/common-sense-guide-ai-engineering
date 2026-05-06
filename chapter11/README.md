@@ -1,12 +1,12 @@
-# Chapter 10 — RAG Chatbot
+# Chapter 11 — RAG Chatbot with Query Expansion & Classification
 
-A terminal-based AI customer support chatbot for fictional GROSS software products. It uses OpenAI `gpt-4.1-mini` for responses and Pinecone for retrieval-augmented generation (RAG).
+An enhanced RAG chatbot for GROSS software customer support. Extends chapter 10 by adding query expansion and product classification before each retrieval step, improving search relevance.
 
 ## Prerequisites
 
 - Python 3.10+
 - An OpenAI API key
-- A Pinecone API key with a pre-populated index named `gross-app` (namespace: `all-gross`)
+- A Pinecone API key with a pre-populated index named `gross-app` (namespace: `all-gross`, with a `manual` metadata field per chunk)
 
 ## Setup
 
@@ -40,7 +40,8 @@ Make sure the virtual environment is activated, then run:
 python chatbot.py
 ```
 
-The chatbot will greet you and wait for your input. Type your question and press Enter. Type `exit` to quit.
+Type your question and press Enter. Type `exit` to quit.
+
 
 ## Supported GROSS products
 
@@ -55,5 +56,4 @@ The chatbot will greet you and wait for your input. Type your question and press
 | File | Description |
 |------|-------------|
 | `chatbot.py` | Main chatbot script |
-| `traces.csv` | Sample conversation traces used for evaluation |
 | `.env` | API keys (not committed to version control) |

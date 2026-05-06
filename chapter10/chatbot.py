@@ -13,18 +13,13 @@ rag_chunks = {}
 def rag(user_input, rag_chunks):
     results = dense_index.search(
         namespace="all-gross",
-        query={
-            "top_k": 3,
-            "inputs": {
-                'text': user_input
-            }
-        }
+        top_k=3,
+        inputs={'text': user_input},
     )
 
-    for hit in results['result']['hits']:
-        fields = hit.get('fields')
-        chunk_text = fields.get('chunk_text')
-        rag_chunks[hit['_id']] = chunk_text
+    for hit in results.result.hits:
+        chunk_text = hit.fields.get('chunk_text')
+        rag_chunks[hit.id] = chunk_text
 
 def system_prompt(rag_chunks=None):
     return {"role": "developer", "content": f"""

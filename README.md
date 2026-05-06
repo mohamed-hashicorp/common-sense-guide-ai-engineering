@@ -13,13 +13,14 @@ Each chapter is a self-contained project you can run independently.
 | 7 | [Vector Search](chapter7/) | Pinecone index creation, dense embeddings with `llama-text-embed-v2` |
 | 8 | [Measuring Quality with Evals](chapter8/) | RAG pipeline, qualitative evaluation, open coding, axial coding, trace generation |
 | 10 | [RAG Chatbot](chapter10/) | Retrieval-augmented generation, Pinecone search, citation enforcement, multi-turn RAG |
+| 11 | [RAG Chatbot with Query Expansion](chapter11/) | Query expansion, product classification, metadata filtering, improved retrieval |
 
 ## Prerequisites
 
 - [uv](https://docs.astral.sh/uv/) (Python package manager, used in chapters 1 and 5)
 - Python 3.10+ (used in chapters 6–10)
 - An [OpenAI API key](https://platform.openai.com/api-keys)
-- A [Pinecone API key](https://www.pinecone.io/) (used in chapters 7, 8, and 10)
+- A [Pinecone API key](https://www.pinecone.io/) (used in chapters 7, 8, 10, and 11)
 
 ## Chapter Summaries
 
@@ -68,6 +69,11 @@ Demonstrates how to systematically measure and improve chatbot quality using gro
 [`chapter10/`](chapter10/)
 
 A production-style RAG chatbot for GROSS software customer support. On each turn, it queries Pinecone for relevant documentation chunks, injects them into the system prompt, and enforces citation of sources. The model's internal `[[chunk-id]]` citations are stripped before displaying to the user.
+
+### Chapter 11 — RAG Chatbot with Query Expansion
+[`chapter11/`](chapter11/)
+
+Extends chapter 10 with two pre-processing steps before each Pinecone search: **query expansion** rewrites the user's message into a more descriptive form, and **product classification** identifies which GROSS product is being asked about so a metadata filter can narrow the search to the relevant manual. Both steps use `gpt-4.1-nano` for speed and cost efficiency.
 
 ## Status
 
